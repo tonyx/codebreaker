@@ -1,0 +1,30 @@
+code breaker.
+
+Solution for the marking guesses problem in this  katacast:
+http://www.vimeo.com/8983724
+
+There is a secret code and there are some guesses. The problem is to mark the guesses with strings like 'ppmm' where the 'p' stands for righ color in the right position, and 'm' for right color in the wrong position.
+
+Here is the complete set of test commented test accccses
+
+
+
+	secret, guess, mark
+
+	"rgyb","xxxx",""      --no correct color: expected ""
+	"rgyb","xxxr","m"     --the 'r' is the only correct color, in wrong position: expected just one 'm'
+	"rgyb","xxgy","mm"    --the 'g' and 'y' are correct in wrong position. Expects two 'm'
+	"rgyb","xrgy","mmm"   --three colors 'r', 'g', and 'y' correct in wrong position: expects three 'm'
+	"rgyb","brgy","mmmm"  --all four colors are correct and all in the wrong position. Expects four 'm'
+	"rgyb","rxxx","p"     -- 'r' is in correct, and in the right place: expects a 'p'
+	"rgyb","rgxx","pp"    -- 'r' and 'g' correct color correct position: two 'p'
+	"rgyb","rgyx","ppp"   -- 'r', 'g', 'y' are correct: three 'p'
+	"rgyb","rgyb","pppp"  -- all are corrects: four 'p'
+	"rgyb","rgby","ppmm"  -- 'r' and 'g' correct. Expects two 'p'. 'b' and 'y' inverted. Expects two 'm'. 
+	"rggg","rgyy","pp"    -- the 'g' is repeated three time in the secret code, and there are three of them in the guess. 
+
+	"rgxx","rggg","pp"    -- the 'g' is repeated three time in the guess, and only one is correct.
+
+
+
+
